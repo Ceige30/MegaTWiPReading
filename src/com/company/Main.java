@@ -11,6 +11,6 @@ public class Main {
 
         }
         //Name	Secret Number	Avg Total Grade	FR Q1 Grade	FR Q2 Grade
-
+        /**RECHECK AT HOME DANG IT*/
     }
 }
