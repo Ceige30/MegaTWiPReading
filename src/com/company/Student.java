@@ -1,4 +1,5 @@
 package com.company;
+
 public class Student {
     public final int secret;
     public String name = "";
