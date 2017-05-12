@@ -1,47 +1,29 @@
 package com.company;
-import java.util.*;
+public class Student {
+    public final int secret;
+    public String name = "";
+    public double quest1 = -1;
+    public double quest2 = -1;
 
-public class Student{
-    public static boolean numsNull;
-    public int seceret;
-    public double quest1;
-    public double quest2;
-    public double total;
-    public String name = " ";
-    public ArrayList<Double> scoresq1 = new ArrayList<>();
-    public ArrayList<Double> scoresq2 = new ArrayList<>();
-    public static ArrayList<Integer> seceretList = new ArrayList<Integer>();
-
-    public Student (Integer holder){
-        seceret = holder;
-        seceretList.add(holder);
-        if(!numsNull){
-            numsNull = true;
-        }
+    public Student(int holder){
+        secret = holder;
     }
-    public void changeName(String store){
-        name  = store;
+    public void response1(double holder1){
+        if(quest1 == -1)
+            quest1 = holder1;
+        else
+            quest1 = (quest1 + holder1) / 2;
     }
-    public void addScoreQ1(double num){
-        scoresq1.add(num);
+    public void response2(double holder2){
+        if(quest2 == -1)
+            quest2 = holder2;
+        else
+            quest2 = (quest2 + holder2) / 2;
     }
-    public void addScoreQ2(double num){
-        scoresq2.add(num);
+    public void setName(String holder){
+        name = holder;
     }
-
-    public void totalScoreQ1() {
-        for (double holder: scoresq1)
-            quest1 += holder;
-        quest1 =  (quest1) /2;
-    }
-
-    public void totalScoreQ2(){
-        for(double holder: scoresq2)
-            quest2 += holder;
-        quest2 = (quest2 )/2;
-    }
-
-    public void totalAvg(){
-        total = quest1 + quest2;
+    public void printStuff(){
+        System.out.printf("%-10s %-15s %-20s %-15s %-15s", name, secret, quest1 + quest2, quest1, quest2);
     }
 }
