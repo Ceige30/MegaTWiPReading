@@ -10,10 +10,15 @@ public class Main {
         sc.nextLine();
         sc2.nextLine();
         while (sc.hasNextLine()){
-            int num = sc.nextInt();
-            if (getStudent(num) == null)
-                namesList.add(new Student(num));
-            sc.nextLine();
+            try {
+                int num = sc.nextInt();
+                if (getStudent(num) == null)
+                    namesList.add(new Student(num));
+                sc.nextLine();
+            }catch(Exception e){
+                //How did you get here?
+            }
+
         }
         while (sc2.hasNextLine()){
             String line = sc2.nextLine();
@@ -63,7 +68,7 @@ public class Main {
         System.out.printf("%-10s %-15s %-20s %-15s %-15s","Name","Secret Number","Avg Total Grade","FR Q1 Grade","FR Q2 Grade");
         System.out.println();
         for (int i = 0; i < namesList.size(); i++) {
-            namesList.get(i).printStuff();
+            namesList.get(i).output();
             System.out.println();
         }
     }
@@ -74,7 +79,9 @@ public class Main {
             if (holder.substring(i, i + 1).replaceAll("[a-zA-Z]", "").isEmpty()) {
                 try{
                     holder = holder.substring(0, i) + holder.substring(i + 2, holder.length());
-                }catch(Exception e){}
+                }catch(Exception e){
+                    //How did you get here?
+                }
             }
         }
         return holder;

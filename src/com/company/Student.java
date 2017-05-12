@@ -5,6 +5,7 @@ public class Student {
     public String name = "";
     public double quest1 = -1;
     public double quest2 = -1;
+    String helder = "";
 
     public Student(int holder){
         secret = holder;
@@ -21,10 +22,10 @@ public class Student {
         else
             quest2 = (quest2 + holder2) / 2;
     }
-    public void setName(String holder){
-        name = holder;
+    public void setName(String input){
+        name = input;
     }
-    public void printStuff(){
+    public void output(){
         System.out.printf("%-10s %-15s %-20s %-15s %-15s", name, secret, quest1 + quest2, quest1, quest2);
     }
 }
